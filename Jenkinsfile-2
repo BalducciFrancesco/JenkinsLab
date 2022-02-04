@@ -4,7 +4,8 @@ pipeline {
   stages {
     stage('In the container') {
       steps {
-        sh 'node --version'
+        sh 'git --version'
+        sh 'curl --version'
       }
     }
   }
