@@ -1,0 +1,14 @@
+pipeline {
+  agent {
+    docker { image 'python' }
+  }
+  
+  stages {
+    stage('In the container') {
+      steps {
+        sh 'wget https://github.com/BalducciFrancesco/JenkinsLab/blob/8c8a3547003f21c5a68b9ffa7eec2c19b81e2833/test.py'
+        sh 'python test.py'
+      }
+    }
+  }
+}
